@@ -200,7 +200,7 @@ const HomeTutors = () => {
                   marginLeft: '2px'
                 }}
               >
-                Giant Steps<span style={{ color: GOLD }}>Tutors</span>
+                Giant Steps Tutors
               </span>
             </div>
 
