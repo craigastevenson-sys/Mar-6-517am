@@ -197,7 +197,7 @@ const HomeTutors = () => {
                 style={{ 
                   fontFamily: "'Playfair Display', Georgia, serif",
                   color: BLUE,
-                  marginLeft: '2px'
+                  marginLeft: '8px'
                 }}
               >
                 Giant Steps Tutors
