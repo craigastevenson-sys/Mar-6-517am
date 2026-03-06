@@ -12,7 +12,7 @@ const Bill96Detail = ({ language, t, scrollToSection }) => {
           <div className="inline-block px-4 py-2 bg-[#EAB333] text-white text-xs font-semibold tracking-wider uppercase mb-4 md:mb-6 rounded-sm">
             {t.bill96.section.label}
           </div>
-          <h2 className="text-2xl md:text-4xl lg:text-5xl font-normal text-[#1B3B5F] mb-4 md:mb-6 leading-tight">
+          <h2 className="text-2xl md:text-4xl font-normal text-[#1B3B5F] mb-4 md:mb-6 leading-tight">
             {t.bill96.section.title}
           </h2>
           <p className="text-base md:text-lg text-gray-600 leading-relaxed">

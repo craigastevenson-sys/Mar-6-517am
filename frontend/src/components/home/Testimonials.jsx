@@ -9,7 +9,7 @@ const Testimonials = ({ t, testimonials }) => {
           <div className="inline-block px-4 py-2 bg-[#1B3B5F] text-white text-xs font-semibold tracking-wider uppercase mb-4 md:mb-6 rounded-sm">
             {t.testimonials.title}
           </div>
-          <h2 className="text-3xl md:text-5xl font-normal text-[#1B3B5F] leading-tight">
+          <h2 className="text-2xl md:text-4xl font-normal text-[#1B3B5F] leading-tight">
             {t.testimonials.heading}
           </h2>
         </div>

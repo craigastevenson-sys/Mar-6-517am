@@ -16,7 +16,7 @@ const ServiceSection = ({ service, sectionId, index, language, scrollToSection }
             <div className="inline-block px-4 py-2 bg-[#1B3B5F] text-white text-xs font-semibold tracking-wider uppercase mb-4 md:mb-6 rounded-sm">
               {language === 'en' ? 'Our Services' : 'Nos services'}
             </div>
-            <h2 className="text-2xl md:text-4xl font-normal text-[#1B3B5F] mb-4 md:mb-6 leading-tight">
+            <h2 className="text-2xl md:text-3xl font-normal text-[#1B3B5F] mb-4 md:mb-6 leading-tight">
               {service.title}
             </h2>
             <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-6 md:mb-8">

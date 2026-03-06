@@ -13,7 +13,7 @@ const HeroSection = ({ language, t, scrollToSection }) => {
             <div className="inline-block px-4 py-2 bg-[#1B3B5F] text-white text-xs font-semibold tracking-wider uppercase mb-6 rounded-sm">
               {t.about.title}
             </div>
-            <h2 className="text-3xl md:text-5xl font-normal text-[#1B3B5F] mb-6 md:mb-8 leading-tight">
+            <h2 className="text-2xl md:text-4xl font-normal text-[#1B3B5F] mb-6 md:mb-8 leading-tight">
               {t.about.heading}
             </h2>
             <div className="space-y-4 md:space-y-6 text-base md:text-lg text-gray-600 leading-relaxed">

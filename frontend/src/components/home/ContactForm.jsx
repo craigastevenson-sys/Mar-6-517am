@@ -58,7 +58,7 @@ const ContactForm = ({ language, t }) => {
           <div className="inline-block px-4 py-2 bg-white/10 text-white text-xs font-semibold tracking-wider uppercase mb-4 md:mb-6">
             {t.contact.title}
           </div>
-          <h2 className="text-3xl md:text-5xl font-normal text-white leading-tight">
+          <h2 className="text-2xl md:text-4xl font-normal text-white leading-tight">
             {t.contact.heading}
           </h2>
         </div>
