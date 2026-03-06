@@ -4,16 +4,38 @@ import { Languages, Menu, X } from 'lucide-react';
 const Header = ({ language, toggleLanguage, scrollToSection, t, logoEn, logoFr }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  // Brand colors
+  const BLUE = '#1B3B5F';
+  const GOLD = '#D4A84B';
+
   return (
     <header className="fixed top-0 left-0 right-0 bg-white backdrop-blur-md border-b border-gray-100 z-50">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="flex items-center justify-between h-[72px] md:h-[92px]">
-          <img
-            src={language === 'en' ? logoEn : logoFr}
-            alt={language === 'en' ? 'Advance Language' : 'Avance Langues'}
-            className="h-[50px] md:h-[71px] w-auto object-contain cursor-pointer flex-shrink-0"
+          {/* Logo with Montserrat text */}
+          <div 
+            className="flex items-center cursor-pointer"
             onClick={() => scrollToSection('about')}
-          />
+          >
+            <img
+              src="/advance-language-icon.png"
+              alt={language === 'en' ? 'Advance Language' : 'Avance Langue'}
+              className="h-12 md:h-14 w-auto object-contain"
+            />
+            <span 
+              className="text-xl md:text-2xl font-semibold tracking-tight"
+              style={{ 
+                fontFamily: "'Montserrat', sans-serif",
+                color: BLUE,
+                marginLeft: '4px'
+              }}
+            >
+              {language === 'en' ? 'Advance' : 'Avance'}{' '}
+              <span style={{ fontWeight: 500 }}>
+                {language === 'en' ? 'Language' : 'Langue'}
+              </span>
+            </span>
+          </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-10">
