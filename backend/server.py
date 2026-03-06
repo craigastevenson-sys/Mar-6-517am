@@ -125,8 +125,8 @@ async def send_contact_notification(submission: dict, language: str = "en"):
     smtp_user = "craig@advancelanguage.com"
     smtp_password = "MpsWu9EYy1zr"
 
-    # All submissions from this site go to Giant Steps Tutors
-    recipient = "craig@giantstepstutors.com"
+    # All submissions from this site go to Advance Language
+    recipient = "craig@advancelanguage.com"
 
     if not all([smtp_host, smtp_user, smtp_password, recipient]):
         logger.info("SMTP not configured — skipping email notification")
