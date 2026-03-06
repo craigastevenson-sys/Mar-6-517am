@@ -1,0 +1,32 @@
+.App {
+  min-height: 100vh;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ensure logo background matches page background - no transparency checkered pattern */
+img[alt*="Advance"],
+img[alt*="Avance"] {
+  background-color: rgb(249, 250, 251) !important;
+  mix-blend-mode: darken;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2c5f8d;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1e4469;
+}

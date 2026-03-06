@@ -1,0 +1,15 @@
+# Robots.txt for Advance Language / Avance Langue / Giant Steps Tutors
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://advancelanguage.com/sitemap.xml
+Sitemap: https://avance-langue.com/sitemap.xml
+Sitemap: https://giantstepstutors.com/sitemap.xml
+
+# Crawl-delay (optional, be nice to servers)
+Crawl-delay: 1
+
+# Disallow admin or API routes
+Disallow: /api/
