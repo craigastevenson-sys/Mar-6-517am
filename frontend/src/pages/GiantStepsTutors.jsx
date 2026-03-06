@@ -182,13 +182,13 @@ const HomeTutors = () => {
       <header className="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="flex items-center justify-between h-16 md:h-20">
-            {/* Logo - Text version with Playfair Display */}
+            {/* Logo - Icon with Playfair Display text */}
             <div 
               className="flex items-center gap-2 cursor-pointer"
               onClick={() => scrollToSection('about')}
             >
               <img
-                src="/giant-steps-logo-cropped.png"
+                src="/giant-steps-favicon-raw.png"
                 alt="Giant Steps Tutors Icon"
                 className="h-10 md:h-12 w-auto object-contain"
               />
