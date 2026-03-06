@@ -119,18 +119,19 @@ async def send_contact_notification(submission: dict, language: str = "en"):
     from email.mime.text import MIMEText
     from email.mime.multipart import MIMEMultipart
 
-    smtp_host = os.environ.get('SMTP_HOST')
-    smtp_port = int(os.environ.get('SMTP_PORT', 465))
-    smtp_user = os.environ.get('SMTP_USER')
-    smtp_password = os.environ.get('SMTP_PASSWORD')
+    # Hardcoded Zoho SMTP settings
+    smtp_host = "smtp.zohocloud.ca"
+    smtp_port = 465
+    smtp_user = "craig@advancelanguage.com"
+    smtp_password = "MpsWu9EYy1zr"
 
-    # Select recipient based on language
+    # Select recipient based on language/site
     if language == "fr":
-        recipient = os.environ.get('NOTIFICATION_EMAIL_FR')
+        recipient = "craig@advancelanguage.com"
     elif language == "tutors":
-        recipient = os.environ.get('NOTIFICATION_EMAIL_TUTORS', os.environ.get('NOTIFICATION_EMAIL_EN'))
+        recipient = "craig@giantstepstutors.com"
     else:
-        recipient = os.environ.get('NOTIFICATION_EMAIL_EN')
+        recipient = "craig@advancelanguage.com"
 
     if not all([smtp_host, smtp_user, smtp_password, recipient]):
         logger.info("SMTP not configured — skipping email notification")
