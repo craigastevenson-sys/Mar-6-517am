@@ -32,8 +32,17 @@ Fix favicon issue for advancelanguage.com - copy the favicon from avance-langue.
   - Added domain-specific favicon handling for advancelanguage.com domain
   - Updated dynamic script to set favicon for avance-langue, avancelangue, and advancelanguage domains
 
+- **Open Graph Images Added for All Three Sites**:
+  - advancelanguage.com: Corporate training session image (professional meeting)
+  - avance-langue.com: French formation linguistique image (conference room presentation)
+  - giantstepstutors.com: One-on-one tutoring session image
+  - All images are 1200x630 (optimal for social sharing)
+  - Added og:image, og:image:width, og:image:height, og:image:alt
+  - Added twitter:image for Twitter card previews
+  - Dynamic script switches images based on domain
+
 ### Files Changed
-- `/app/frontend/public/index.html` - Updated favicon references and dynamic script
+- `/app/frontend/public/index.html` - Updated favicon references, dynamic script, and added OG image meta tags
 - `/app/frontend/public/favicon-avance-langue.ico` - New favicon file (copied from live site)
 
 ## Prioritized Backlog
