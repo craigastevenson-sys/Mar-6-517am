@@ -188,7 +188,7 @@ const HomeTutors = () => {
               onClick={() => scrollToSection('about')}
             >
               <img
-                src="/giant-steps-favicon-raw.png"
+                src="/giant-steps-icon-only.png"
                 alt="Giant Steps Tutors Icon"
                 className="h-12 md:h-14 w-auto object-contain"
               />
@@ -197,7 +197,7 @@ const HomeTutors = () => {
                 style={{ 
                   fontFamily: "'Playfair Display', Georgia, serif",
                   color: BLUE,
-                  marginLeft: '-28px'
+                  marginLeft: '2px'
                 }}
               >
                 Giant Steps<span style={{ color: GOLD }}>Tutors</span>
