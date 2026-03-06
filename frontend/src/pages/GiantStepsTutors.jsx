@@ -184,16 +184,16 @@ const HomeTutors = () => {
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo - Icon with Playfair Display text */}
             <div 
-              className="flex items-center gap-2 cursor-pointer"
+              className="flex items-center gap-1 cursor-pointer"
               onClick={() => scrollToSection('about')}
             >
               <img
                 src="/giant-steps-favicon-raw.png"
                 alt="Giant Steps Tutors Icon"
-                className="h-10 md:h-12 w-auto object-contain"
+                className="h-12 md:h-14 w-auto object-contain"
               />
               <span 
-                className="text-xl md:text-2xl font-bold tracking-tight"
+                className="text-2xl md:text-3xl font-bold tracking-tight"
                 style={{ 
                   fontFamily: "'Playfair Display', Georgia, serif",
                   color: BLUE 
