@@ -193,10 +193,11 @@ const HomeTutors = () => {
                 className="h-12 md:h-14 w-auto object-contain"
               />
               <span 
-                className="text-2xl md:text-3xl font-bold tracking-tight -ml-1"
+                className="text-2xl md:text-3xl font-bold tracking-tight"
                 style={{ 
                   fontFamily: "'Playfair Display', Georgia, serif",
-                  color: BLUE 
+                  color: BLUE,
+                  marginLeft: '-12px'
                 }}
               >
                 Giant Steps<span style={{ color: GOLD }}>Tutors</span>
