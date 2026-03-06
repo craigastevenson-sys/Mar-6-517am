@@ -18,7 +18,7 @@ const Header = ({ language, toggleLanguage, scrollToSection, t, logoEn, logoFr }
             onClick={() => scrollToSection('about')}
           >
             <img
-              src="/advance-language-icon.png"
+              src="/advance-language-icon-cropped.png"
               alt={language === 'en' ? 'Advance Language' : 'Avance Langue'}
               className="h-12 md:h-14 w-auto object-contain"
             />
@@ -27,7 +27,7 @@ const Header = ({ language, toggleLanguage, scrollToSection, t, logoEn, logoFr }
               style={{ 
                 fontFamily: "'Montserrat', sans-serif",
                 color: BLUE,
-                marginLeft: '12px'
+                marginLeft: '8px'
               }}
             >
               {language === 'en' ? 'Advance' : 'Avance'}{' '}
