@@ -197,7 +197,7 @@ const HomeTutors = () => {
                 style={{ 
                   fontFamily: "'Playfair Display', Georgia, serif",
                   color: BLUE,
-                  marginLeft: '-12px'
+                  marginLeft: '-28px'
                 }}
               >
                 Giant Steps<span style={{ color: GOLD }}>Tutors</span>
