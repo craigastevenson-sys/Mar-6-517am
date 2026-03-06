@@ -23,11 +23,11 @@ const Header = ({ language, toggleLanguage, scrollToSection, t, logoEn, logoFr }
               className="h-12 md:h-14 w-auto object-contain"
             />
             <span 
-              className="text-xl md:text-2xl font-semibold tracking-tight"
+              className="text-2xl md:text-3xl font-semibold tracking-tight"
               style={{ 
                 fontFamily: "'Montserrat', sans-serif",
                 color: BLUE,
-                marginLeft: '4px'
+                marginLeft: '12px'
               }}
             >
               {language === 'en' ? 'Advance' : 'Avance'}{' '}
