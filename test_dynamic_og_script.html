@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Graph Dynamic Script Test</title>
+    
+    <!-- Default Open Graph tags (same as in the actual site) -->
+    <meta property="og:image" content="https://images.unsplash.com/photo-1565688527174-775059ac429c?w=1200&h=630&fit=crop" id="og-image" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Professional corporate language training session" />
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1565688527174-775059ac429c?w=1200&h=630&fit=crop" id="twitter-image" />
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .test-section {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .pass { color: green; }
+        .fail { color: red; }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .meta-display {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 3px;
+            margin: 10px 0;
+            font-family: monospace;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 Open Graph Dynamic Script Test</h1>
+    <p>This page tests the dynamic switching functionality for Open Graph meta tags based on hostname.</p>
+    
+    <div class="test-section">
+        <h2>Current Meta Tags</h2>
+        <div id="current-meta" class="meta-display"></div>
+        <button onclick="displayCurrentMeta()">Refresh Meta Tags Display</button>
+    </div>
+    
+    <div class="test-section">
+        <h2>Domain Simulation Tests</h2>
+        <p>Test the dynamic switching by simulating different domains:</p>
+        
+        <button onclick="testGiantStepsTutors()">Test Giant Steps Tutors</button>
+        <button onclick="testAvanceLangue()">Test Avance Langue</button>
+        <button onclick="testAdvanceLanguage()">Test Advance Language (Default)</button>
+        <button onclick="resetToDefault()">Reset to Default</button>
+        
+        <div id="test-results" class="meta-display"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Test Results Summary</h2>
+        <div id="summary"></div>
+    </div>
+
+    <script>
+        // Copy of the actual dynamic script from the site with modifications for testing
+        function applyDomainLogic(hostname) {
+            console.log(`Testing hostname: ${hostname}`);
+            
+            var h = hostname.toLowerCase();
+            var setMeta = function(sel, attr, val) {
+                var el = document.querySelector(sel);
+                if (el) {
+                    el.setAttribute(attr, val);
+                    console.log(`Set ${sel} ${attr} to: ${val}`);
+                } else {
+                    console.log(`Element not found: ${sel}`);
+                }
+            };
+            
+            // Reset to defaults first
+            setMeta('meta[property="og:image"]', 'content', 'https://images.unsplash.com/photo-1565688527174-775059ac429c?w=1200&h=630&fit=crop');
+            setMeta('meta[property="og:image:alt"]', 'content', 'Professional corporate language training session');
+            setMeta('meta[name="twitter:image"]', 'content', 'https://images.unsplash.com/photo-1565688527174-775059ac429c?w=1200&h=630&fit=crop');
+            
+            if (h.indexOf('giantstepstutors') !== -1) {
+                setMeta('meta[property="og:image"]', 'content', 'https://images.unsplash.com/photo-1758685733907-42e9651721f5?w=1200&h=630&fit=crop');
+                setMeta('meta[property="og:image:alt"]', 'content', 'Professional tutoring session - one on one learning');
+                setMeta('meta[name="twitter:image"]', 'content', 'https://images.unsplash.com/photo-1758685733907-42e9651721f5?w=1200&h=630&fit=crop');
+                return 'giantstepstutors';
+            } else if (h.indexOf('avance-langue') !== -1 || h.indexOf('avancelangue') !== -1) {
+                setMeta('meta[property="og:image"]', 'content', 'https://images.unsplash.com/photo-1758691736067-b309ee3ef7b9?w=1200&h=630&fit=crop');
+                setMeta('meta[property="og:image:alt"]', 'content', 'Formation linguistique professionnelle en entreprise');
+                setMeta('meta[name="twitter:image"]', 'content', 'https://images.unsplash.com/photo-1758691736067-b309ee3ef7b9?w=1200&h=630&fit=crop');
+                return 'avance-langue';
+            } else {
+                return 'advancelanguage (default)';
+            }
+        }
+        
+        function getCurrentMeta() {
+            return {
+                ogImage: document.querySelector('meta[property="og:image"]')?.getAttribute('content') || 'NOT FOUND',
+                ogImageAlt: document.querySelector('meta[property="og:image:alt"]')?.getAttribute('content') || 'NOT FOUND',
+                twitterImage: document.querySelector('meta[name="twitter:image"]')?.getAttribute('content') || 'NOT FOUND',
+                ogImageWidth: document.querySelector('meta[property="og:image:width"]')?.getAttribute('content') || 'NOT FOUND',
+                ogImageHeight: document.querySelector('meta[property="og:image:height"]')?.getAttribute('content') || 'NOT FOUND'
+            };
+        }
+        
+        function displayCurrentMeta() {
+            const meta = getCurrentMeta();
+            const display = document.getElementById('current-meta');
+            display.innerHTML = `
+                <strong>og:image:</strong> ${meta.ogImage}<br>
+                <strong>og:image:width:</strong> ${meta.ogImageWidth}<br>
+                <strong>og:image:height:</strong> ${meta.ogImageHeight}<br>
+                <strong>og:image:alt:</strong> ${meta.ogImageAlt}<br>
+                <strong>twitter:image:</strong> ${meta.twitterImage}
+            `;
+        }
+        
+        function testGiantStepsTutors() {
+            const result = applyDomainLogic('giantstepstutors.com');
+            const meta = getCurrentMeta();
+            
+            const expectedImage = 'https://images.unsplash.com/photo-1758685733907-42e9651721f5?w=1200&h=630&fit=crop';
+            const expectedAlt = 'Professional tutoring session - one on one learning';
+            
+            const passed = 
+                meta.ogImage === expectedImage && 
+                meta.twitterImage === expectedImage && 
+                meta.ogImageAlt === expectedAlt;
+            
+            updateTestResults('Giant Steps Tutors', passed, meta, {
+                expectedImage: expectedImage,
+                expectedAlt: expectedAlt
+            });
+            
+            displayCurrentMeta();
+            return passed;
+        }
+        
+        function testAvanceLangue() {
+            const result = applyDomainLogic('avance-langue.com');
+            const meta = getCurrentMeta();
+            
+            const expectedImage = 'https://images.unsplash.com/photo-1758691736067-b309ee3ef7b9?w=1200&h=630&fit=crop';
+            const expectedAlt = 'Formation linguistique professionnelle en entreprise';
+            
+            const passed = 
+                meta.ogImage === expectedImage && 
+                meta.twitterImage === expectedImage && 
+                meta.ogImageAlt === expectedAlt;
+            
+            updateTestResults('Avance Langue', passed, meta, {
+                expectedImage: expectedImage,
+                expectedAlt: expectedAlt
+            });
+            
+            displayCurrentMeta();
+            return passed;
+        }
+        
+        function testAdvanceLanguage() {
+            const result = applyDomainLogic('advancelanguage.com');
+            const meta = getCurrentMeta();
+            
+            const expectedImage = 'https://images.unsplash.com/photo-1565688527174-775059ac429c?w=1200&h=630&fit=crop';
+            const expectedAlt = 'Professional corporate language training session';
+            
+            const passed = 
+                meta.ogImage === expectedImage && 
+                meta.twitterImage === expectedImage && 
+                meta.ogImageAlt === expectedAlt;
+            
+            updateTestResults('Advance Language (Default)', passed, meta, {
+                expectedImage: expectedImage,
+                expectedAlt: expectedAlt
+            });
+            
+            displayCurrentMeta();
+            return passed;
+        }
+        
+        function resetToDefault() {
+            applyDomainLogic('advancelanguage.com');
+            displayCurrentMeta();
+            document.getElementById('test-results').innerHTML = '<em>Reset to default state</em>';
+        }
+        
+        function updateTestResults(testName, passed, actualMeta, expected) {
+            const status = passed ? '<span class="pass">✅ PASSED</span>' : '<span class="fail">❌ FAILED</span>';
+            const resultsDiv = document.getElementById('test-results');
+            
+            let details = '';
+            if (!passed) {
+                details = `
+                    <br><small>
+                    Expected image: ${expected.expectedImage}<br>
+                    Actual og:image: ${actualMeta.ogImage}<br>
+                    Expected alt: ${expected.expectedAlt}<br>
+                    Actual alt: ${actualMeta.ogImageAlt}
+                    </small>
+                `;
+            }
+            
+            resultsDiv.innerHTML = `<strong>${testName}:</strong> ${status}${details}`;
+            
+            updateSummary();
+        }
+        
+        function updateSummary() {
+            // Run all tests and show summary
+            setTimeout(() => {
+                runAllTests();
+            }, 100);
+        }
+        
+        function runAllTests() {
+            console.log('Running all tests...');
+            
+            const results = {
+                giantSteps: testGiantStepsTutors(),
+                avanceLangue: testAvanceLangue(), 
+                advanceLanguage: testAdvanceLanguage()
+            };
+            
+            const totalTests = Object.keys(results).length;
+            const passedTests = Object.values(results).filter(r => r).length;
+            
+            const summaryDiv = document.getElementById('summary');
+            const allPassed = passedTests === totalTests;
+            
+            summaryDiv.innerHTML = `
+                <h3>Overall Results: ${passedTests}/${totalTests} tests passed</h3>
+                ${allPassed ? 
+                    '<p class="pass">🎉 All dynamic switching tests passed!</p>' : 
+                    '<p class="fail">⚠️ Some tests failed. Check the implementation.</p>'
+                }
+                <ul>
+                    <li>Giant Steps Tutors: ${results.giantSteps ? '✅ Pass' : '❌ Fail'}</li>
+                    <li>Avance Langue: ${results.avanceLangue ? '✅ Pass' : '❌ Fail'}</li>
+                    <li>Advance Language: ${results.advanceLanguage ? '✅ Pass' : '❌ Fail'}</li>
+                </ul>
+            `;
+        }
+        
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            displayCurrentMeta();
+            console.log('Open Graph Dynamic Script Test page loaded');
+        });
+    </script>
+</body>
+</html>
