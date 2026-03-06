@@ -314,7 +314,7 @@ const HomeTutors = () => {
             {t.coreAcademics.subjects.map((subject, index) => (
               <div
                 key={index}
-                className="p-5 md:p-6 bg-white/10 backdrop-blur rounded-xl hover:bg-white/20 transition-all duration-300 border border-white/10"
+                className="p-5 md:p-6 bg-white/10 backdrop-blur rounded-xl border border-white/10"
               >
                 <div className="w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center mb-4 md:mb-5" style={{ backgroundColor: GOLD }}>
                   <BookOpen className="w-6 h-6 md:w-7 md:h-7 text-white" />
@@ -413,7 +413,7 @@ const HomeTutors = () => {
             {t.specialized.services.map((service, index) => (
               <div
                 key={index}
-                className="p-5 md:p-6 bg-white/10 backdrop-blur rounded-xl hover:bg-white/20 transition-all duration-300 border border-white/10"
+                className="p-5 md:p-6 bg-white/10 backdrop-blur rounded-xl border border-white/10"
               >
                 <div className="w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center mb-4 md:mb-5" style={{ backgroundColor: GOLD }}>
                   <Users className="w-6 h-6 md:w-7 md:h-7 text-white" />
